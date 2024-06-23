@@ -1,0 +1,55 @@
+<div class="content-log">
+  <div class="login-content">
+    <mat-card class="login-card">
+      <mat-card-content>
+        <div class="header-login-card">
+          <mat-card-header>
+            <mat-card-title class="welcome-text">Iniciar sesion</mat-card-title>
+            <mat-card-subtitle class="subtitle-text" class="custom-subtitle">Bienvenido! Por favor ingresa tus datos</mat-card-subtitle>
+          </mat-card-header>
+        </div>
+
+        <div class="login-form">
+          <form (ngSubmit)="onLogin()" name="loginForm" [formGroup]="loginForm">
+            <div class="form-group">
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input formControlName="email" matInput placeholder="Enter email address" required/>
+                <mat-error *ngIf="loginForm.controls['email'] && !loginForm.controls['email'].valid">
+                  Ingrese email
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="form-group">
+              <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Contraseña</mat-label>
+                <input formControlName="password" matInput [type]=" hide ? 'password' : 'text'" required />
+                <button  mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide Password'"
+                         [attr.aria-pressed]="hide">
+                  <mat-icon>
+                    {{hide ? 'visibility_off' : 'visibility'}}
+                  </mat-icon>
+                </button>
+
+
+                <mat-error *ngIf="loginForm.controls['password'] && !loginForm.controls['password'].valid">
+                  Password is required
+                </mat-error>
+
+              </mat-form-field>
+            </div>
+
+            <button class="btn-login">Iniciar sesion</button>
+
+            <div class="sign-up-content">
+              <label class="question-text">No tienes una cuenta?</label>
+              <label class="sign-up-link"><a routerLink="/sign-up">Registrarse</a></label>
+            </div>
+
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+table{
+    width: 100%;
+}
+
+.title{
+    color: whitesmoke;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+button{
+    border: none;
+}
+#button_cotizacion{
+  background-color: #572df0dc;
+  color: white;
+}
+
+mat-label{
+  font-size: 1.08rem;
+  color: white;
+}
+
+

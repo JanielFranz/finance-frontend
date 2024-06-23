@@ -1,0 +1,29 @@
+<div>
+  <mat-toolbar class="mat-toolbar">
+    <span class="example-spacer"></span>
+
+    <div class="nav">
+      <a class="a" href="/home">Inicio </a>
+      <a class="a" href="/clientes"> Clientes </a>
+      <a class="a" href="/catalogo"> Modelos </a>
+      <a class="a" href="/contacto"> Contacto </a>
+    </div>
+
+    <span class="example-spacer"></span>
+
+    <a class="logout-link" href="/sign-in">
+      <mat-icon class="icon-size">login</mat-icon>
+    </a>
+
+    <button mat-mini-fab class="example-icon disable" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <a class="a" mat-menu-item href="/home"><mat-icon>dialpad</mat-icon> Inicio</a>
+      <a class="a" mat-menu-item href="/clientes"><mat-icon>star</mat-icon> Clientes</a>
+      <a class="a" mat-menu-item href="/catalogo"><mat-icon>home</mat-icon> Modelos</a>
+      <a class="a" mat-menu-item href="/contacto"><mat-icon>feedback</mat-icon> Contacto</a>
+    </mat-menu>
+  </mat-toolbar>
+</div>

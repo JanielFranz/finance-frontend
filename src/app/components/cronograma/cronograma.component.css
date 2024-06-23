@@ -1,0 +1,37 @@
+table{
+  width: 100%;
+}
+
+.title{
+  color: whitesmoke;
+}
+
+.mat-form-field{
+  font-size: 14px;
+  width: 100%;
+}
+
+button{
+  border: none;
+}
+
+.example-form mat-slide-toggle {
+  margin: 8px 0;
+  display: block;
+}
+.esilo{
+
+  font-size: 20px;
+  font-weight: bold;
+}
+.strong-row {
+  background-color: #FFD700; /* Color fuerte para la fila seleccionada */
+}
+
+.even-row {
+  background-color: #F0F0F0; /* Color suave para filas pares */
+}
+
+.odd-row {
+  background-color: #FFFFFF; /* Color suave para filas impares */
+}

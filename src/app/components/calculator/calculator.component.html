@@ -1,0 +1,136 @@
+<div class="background-container">
+  <a routerLink="/sign-in" class="logout-link" (click)="logout()">
+    <mat-icon class="icon-size">exit_to_app</mat-icon>
+  </a>
+  <a routerLink="/home" class="back-button">
+    <mat-icon class="icon-size">arrow_back</mat-icon>
+  </a>
+  <div class="form-container">
+
+
+    <form (ngSubmit)="enviarDatos()">
+      <div class="column">
+    
+        <label for="marcaVehiculo">Marca del vehículo:</label>
+        <input type="text" id="marcaVehiculo" [(ngModel)]="cronograma.marcaVehiculo" name="marcaVehiculo" required>
+
+        <label for="modeloVehiculo">Modelo del vehículo:</label>
+        <input type="text" id="modeloVehiculo" [(ngModel)]="cronograma.modeloVehiculo" name="modeloVehiculo" required>
+
+        <label for="precioVehiculo">Precio vehiculo:</label>
+        <input type="number" id="precioVehiculo" [(ngModel)]="cronograma.precioVehiculo" name="precioVehiculo" min="0" required > 
+
+        <label for="tipoMoneda">Tipo de Moneda</label>
+        <mat-select [(ngModel)]="cronograma.tipoMoneda" id="tipoMoneda" name="tipoMoneda" required>
+          <mat-option value="SOLES">Soles</mat-option>
+          <mat-option value="DOLARES">Dólares</mat-option>
+        </mat-select>
+        
+
+        <label for="numeroAnios">Años:</label>
+        <input type="number" id="numeroAnios" [(ngModel)]="cronograma.numeroAnios" name="numeroAnios" min="0" required>
+
+        <label for="porcentajeCuotaInicial">%Cuota inicial:</label>
+        <input type="number" id="porcentajeCuotaInicial" [(ngModel)]="cronograma.porcentajeCuotaInicial" min="0" name="porcentajeCuotaInicial" required>
+
+
+        <label for="tipoTasaInteres">Tipo de tasa:</label>
+        <mat-select [(ngModel)]="cronograma.tipoTasaInteres" id="tipoTasaInteres" name="tipoTasaInteres" required>
+          <mat-option value="EFECTIVA">EFECTIVA</mat-option>
+          <mat-option value="NOMINAL">NOMINAL</mat-option>
+          <mat-option value="TES">TES</mat-option>
+        </mat-select>
+
+        <label for="porcentajeTasaInteres">%Tasa de interes:</label>
+        <input type="number" id="porcentajeTasaInteres" [(ngModel)]="cronograma.porcentajeTasaInteres" name="porcentajeTasaInteres" required>
+
+        <label for="plazoTasaInteres">Plazo tasa interes:</label>
+        <mat-select [(ngModel)]="cronograma.plazoTasaInteres" id="plazoTasaInteres" name="plazoTasaInteres" required>
+          <mat-option value="MENSUAL">MENSUAL</mat-option>
+          <mat-option value="ANUAL">ANUAL</mat-option>
+        </mat-select>
+
+        <label for="capitalizacion">Capitalizacion:</label>
+        <mat-select [(ngModel)]="cronograma.capitalizacion" id="capitalizacion" name="capitalizacion" required>
+          <mat-option value="MENSUAL">Mensual</mat-option>
+          <mat-option value="ANUAL">Anual</mat-option>
+          <mat-option value="DIARIA">Diario</mat-option>
+        </mat-select>
+
+        <label for="frecuenciaPago">Frecuencia de pago:</label>
+        <mat-select [(ngModel)]="cronograma.frecuenciaPago" id="frecuenciaPago" name="frecuenciaPago" required>
+          <mat-option value="ANUAL">Anual</mat-option>
+          <mat-option value="SEMESTRAL">Semestral</mat-option>
+          <mat-option value="TRIMESTRAL">Trimestral</mat-option>
+          <mat-option value="BIMESTRAL">Bimestral</mat-option>
+          <mat-option value="MENSUAL">Mensual</mat-option>
+          <mat-option value="QUINCENAL">Quincenal</mat-option>
+          <mat-option value="SEMANAL">Semanal</mat-option>
+          <mat-option value="DIARIA">Diaria</mat-option>
+        </mat-select>
+
+      </div>
+
+      <div class="column">
+
+       
+
+        <label for="fechaInicio">Fecha de inicio:</label>
+        <div class="date-picker">
+          <input id="fechaInicio" matInput [matDatepicker]="picker" [min]="minDate" [(ngModel)]="cronograma.fechaInicio" name="fechaInicio" (dateChange)="onDateChange($event)" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </div>
+
+        <label for="plazoDeGracia">Plazo de gracia:</label>
+        <mat-select [(ngModel)]="cronograma.plazoDeGracia" id="plazoDeGracia" name="plazoDeGracia" required>
+          <mat-option value="NO">No</mat-option>
+          <mat-option value="PARCIAL">Parcial</mat-option>
+          <mat-option value="TOTAL">Total</mat-option>
+        </mat-select>
+
+        <label for="tiempoPlazoGracia">Tiempo plazo de gracia:</label>
+        <input type="number" id="tiempoPlazoGracia" [(ngModel)]="cronograma.tiempoPlazoDeGracia" min="0" name="tiempoPlazoGracia" required>
+
+        <label for="porcentajeSeguroDesgravamen">%Seguro desgravamen</label>
+        <input type="number" id="porcentajeSeguroDesgravamen" [(ngModel)]="cronograma.porcentajeSeguroDesgravamen" min="0" name="porcentajeSeguroDesgravamen" required>
+
+        <label for="tiempoSeguroDesgravamen">Tiempo seguro desgravamen:</label>
+        <mat-select [(ngModel)]="cronograma.tiempoSeguroDesgravamen" id="tiempoSeguroDesgravamen" name="tiempoSeguroDesgravamen" required>
+          <mat-option value="MENSUAL">MENSUAL</mat-option>
+          <mat-option value="ANUAL">ANUAL</mat-option>
+        </mat-select>
+
+        <label for="porcentajeSeguroVehicular">%Porcentaje seguro vehicular:</label>
+        <input type="number" id="porcentajeSeguroVehicular" [(ngModel)]="cronograma.porcentajeSeguroVehicular" min="0" name="porcentajeSeguroVehicular" required>
+
+        <label for="tiempoSeguroVehicular">Tiempo seguro vehicular:</label>
+        <mat-select [(ngModel)]="cronograma.tiempoSeguroVehicular" id="tiempoSeguroVehicular" name="tiempoSeguroVehicular" required>
+          <mat-option value="MENSUAL">MENSUAL</mat-option>
+          <mat-option value="ANUAL">ANUAL</mat-option>
+        </mat-select>
+
+        <label for="portes">Portes:</label>
+        <input type="number" id="portes" [(ngModel)]="cronograma.portes" name="portes" min="0" required>
+
+        <label for="costosRegistrales">Costos registrales:</label>
+        <input type="number" id="costosRegistrales" [(ngModel)]="cronograma.costosRegistrales" name="costosRegistrales" min="0" required>
+
+        <label for="costosRegistrales">Costos notariales:</label>
+        <input type="number" id="costosRegistrales" [(ngModel)]="cronograma.costosNotariales" name="costosNotariales" min="0" required>
+
+        <label for="porcentajeCuotaFinal">%Cuota final:</label>
+        <mat-select [(ngModel)]="cronograma.porcentajeCuotaFinal" id="porcentajeCuotaFinal" name="porcentajeCuotaFinal">
+          <mat-option value="40">40%</mat-option>
+          <mat-option value="50">50%</mat-option>
+        </mat-select>
+
+
+      </div>
+
+      <button type="submit">Calcular</button>
+    </form>
+
+  </div>
+
+</div>

@@ -1,0 +1,98 @@
+.background-container {
+  background: linear-gradient(to right top, #77c3fd, #67b8ff, #5dacff, #599fff, #5d91ff, #6a8eff, #768bfe, #8287fd, #908ffd, #9c98fc, #a8a1fc, #b3aafc);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+  min-height: 96.1vh;
+}
+
+.logout-link {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.form-container {
+  max-width: 1200px;
+  min-width: 320px;
+  width: 100%;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
+  background-color: #ffffff;
+  text-align: left;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.column {
+  width: 45%;
+  margin: 1%;
+}
+
+.column label {
+  text-align: left;
+  font-weight: bold;
+}
+
+label {
+  font-weight: bold;
+  text-align: left;
+}
+
+input, mat-select{
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  box-shadow: none;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.date-picker{
+  display: flex;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #570de8;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.logout-link mat-icon {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+}
+.back-button mat-icon {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+}

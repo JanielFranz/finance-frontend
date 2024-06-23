@@ -1,0 +1,98 @@
+.content-register{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(to right top, #77c3fd, #67b8ff, #5dacff, #599fff, #5d91ff, #6a8eff, #768bfe, #8287fd, #908ffd, #9c98fc, #a8a1fc, #b3aafc);
+}
+
+/*primer div */
+.sign-up-content{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+  padding: 30px;
+}
+
+/*HEADER LOGIN Y MENSAJE*/
+.header-signup-card {
+  display: flex;
+  margin: 0 0 15px 0;
+  text-align: center;
+  justify-content: center;
+}
+
+.welcome-text{
+  font-size: 30px;
+  font-weight: 500;
+  color: #000000;
+  padding: 10px;
+  align-items: end;
+}
+
+.header-signup-card mat-card-header mat-card-subtitle {
+  color: #949494 !important;
+}
+
+.signup-card {
+  text-align: center;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  padding: 45px; /* relleno dentro del card */
+  box-sizing: border-box;
+  font-size: 14px;
+}
+  
+.signup-form {
+  margin: 28px 0;
+  text-align: left;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.btn-login {
+  padding: 15px 20px;
+  background-color: #6375f0;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.sign-in-content{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 25px 10px 0 0;
+}
+
+.question-text{
+  color: #949494;
+  font-size: 15px;
+}
+
+.sign-in-link{
+  color: #6375f0;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.sign-in-link a{
+  text-decoration: none;
+  color: #6375f0;
+}
+
+.passwordmatcherror, .password-length{
+  padding-top: 8px;
+}

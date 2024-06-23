@@ -1,0 +1,68 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.mat-toolbar {
+  background-color: transparent;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  height: 5rem;
+}
+
+.icon-size{
+  color: white;
+  width: 50px;
+}
+.nav a {
+  text-decoration: none; /* Elimina el subrayado */
+  color: white;
+  font-size: 1rem;
+  font-family: "Roboto";
+  letter-spacing: 2px;
+
+  position: relative;
+
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10vh;
+}
+
+.disable{
+  display: none;
+}
+.on{
+  display: flex;
+}
+.mat-mdc-form-field + .mat-mdc-form-field {
+  margin-left: 8px;
+}
+.cotizar-button {
+  background-color: #fc6e08;
+  color: white;
+  padding: 10px 50px;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 967px) {
+  .nav {
+   display: none;
+  }
+  .disable{
+    display: block;
+  }
+  .on{
+    display: none;
+  }
+}
+.mat-mdc-fab.mat-accent, .mat-mdc-mini-fab.mat-accent {
+  --mdc-fab-container-color: rgba(0, 0, 0, 0.7); /* Negro con 80% de transparencia */
+  --mdc-fab-icon-color: white;
+  --mat-mdc-fab-color: white;
+}
+.a{
+  text-decoration: none; /* Elimina el subrayado */
+  color: black;
+}

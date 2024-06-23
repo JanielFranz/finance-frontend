@@ -1,0 +1,94 @@
+<app-navigation-bar></app-navigation-bar>
+<div class="container">
+    <br>
+    <br>
+    <h2 class="title"><strong>Cronograma</strong></h2>
+    <br>
+    <br>
+
+  <mat-slide-toggle [(ngModel)]="isChecked" (change)="moneda()" (change)="cambios()" class="esilo"> DATOS EN {{pintar}}  </mat-slide-toggle>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+    <ng-container matColumnDef="numeroDeCuota">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> # Cuotas </th>
+      <td mat-cell *matCellDef="let element" class="text-center"> {{element.numeroDeCuota }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="fechaDePago">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Fecha </th>
+      <td mat-cell *matCellDef="let element" class="text-center"> {{element.fechaDePago}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="saldoInicial">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Saldo inicial </th>
+      <td mat-cell *matCellDef="let element" class="text-center"> {{(element.saldoInicial * moneda_value) | number:'1.2-2'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="amortizacion">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Amortizacion </th>
+      <td mat-cell *matCellDef="let element" class="text-center"> {{element.amortizacion * moneda_value | number:'1.2-2'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="interes">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Interes </th>
+      <td mat-cell *matCellDef="let element" class="text-center"> {{element.interes * moneda_value | number:'1.2-2' }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="seguroDesgravamen">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Seguro desgravamen </th>
+      <td mat-cell *matCellDef="let element" class="text-center"> {{element.seguroDesgravamen * moneda_value | number:'1.2-2'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="seguroVehicular">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Seguro vehicular </th>
+      <td mat-cell *matCellDef="let element" class="text-center"> {{element.seguroVehicular * moneda_value | number:'1.2-2'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="portes">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Portes </th>
+      <td mat-cell *matCellDef="let element" class="text-center"> {{element.portes * moneda_value | number:'1.2-2'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="costosRegistrales">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Costos registrados </th>
+      <td mat-cell *matCellDef="let element" class="text-center"> {{element.costosRegistrales * moneda_value | number:'1.2-2'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="costosNotariales">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Costos Notariales </th>
+      <td mat-cell *matCellDef="let element" class="text-center"> {{element.costosNotariales * moneda_value | number:'1.2-2'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cuota">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Cuota </th>
+      <td mat-cell *matCellDef="let element" class="text-center"> {{element.cuota * moneda_value | number:'1.2-2'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="saldoFinal">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Saldo final </th>
+      <td mat-cell *matCellDef="let element" class="text-center"> {{element.saldoFinal * moneda_value | number:'1.2-2'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="flujo">
+      <th mat-header-cell *matHeaderCellDef class="text-center"> Flujo </th>
+      <td mat-cell *matCellDef="let element" class="text-center"> {{element.flujo * moneda_value | number:'1.2-2'}} </td>
+    </ng-container>
+
+
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+  <br>
+  <br>
+  <br>
+  </div>
