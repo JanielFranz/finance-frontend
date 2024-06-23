@@ -22,6 +22,14 @@ export class CalculatorComponent implements OnInit{
 
   ngOnInit() {
     this.customerId = this.activated.snapshot.params['customerId'];
+    this.cronograma.porcentajeSeguroVehicular = 0;
+    this.cronograma.portes=0;
+    this.cronograma.costosRegistrales=0;
+    this.cronograma.costosNotariales=0;
+    this.cronograma.tiempoSeguroVehicular="ANUAL";
+    this.cronograma.porcentajeCuotaFinal=0;
+    this.cronograma.porcentajeTasaInteres=0;
+    this.cronograma.tiempoSeguroDesgravamen="ANUAL";
   }
 
   onDateChange(event: any) {
